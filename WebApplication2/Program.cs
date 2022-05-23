@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ILocationBL,LocationBL>();
-builder.Services.AddSingleton<ILocationDL, LocationDL>();
+builder.Services.AddScoped<ILocationDL, LocationDL>();
 var app = builder.Build();
 
 
@@ -21,7 +21,7 @@ app.MapGet("/location/{patientId}", async (ILocationBL _locationBL,String patien
 app.MapGet("/location/", async (ILocationBL _locationBL) => { 
     return await _locationBL.getAllLocations();
 });
-app.MapGet("/location/", async ([FromQuery(Name ="city")] String city,ILocationBL _locationBL) =>
+app.MapGet("/location/city", async ([FromQuery(Name = "city")] String city, ILocationBL _locationBL) =>
 {
     await _locationBL.getLocationsByCity(city);
 });
@@ -34,7 +34,7 @@ app.MapPost("/location/", async (ILocationBL _locationBL,Location newLocation) =
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(); 
 }
 
 app.UseAuthorization();
