@@ -14,9 +14,9 @@ namespace boot_camp2.Controllers
         public LocationController(ILocationService locationService)
         {
             _locationService = locationService;
-              log = new LoggerConfiguration()
-                   .WriteTo.File("C:\\Users\\user\\source\\Repos\\nessi0527\\logs\\log.txt")
-                   .CreateLogger();
+            log = new LoggerConfiguration()
+                 .WriteTo.File("C:\\Users\\user\\source\\Repos\\nessi0527\\logs\\log.txt")
+                 .CreateLogger();
             
         }
         // GET: api/<PatientController>
