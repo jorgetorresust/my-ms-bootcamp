@@ -9,7 +9,7 @@ namespace Tests
     //: IClassFixture<WebApplicationFactory<Program>>
     public class LocationTest{
         [Fact]
-    public async Task test_getAllLocations()
+    public async Task getAllLocations()
     {
             var application = new WebApplicationFactory<Program>();
           
