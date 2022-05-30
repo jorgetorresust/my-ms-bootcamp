@@ -6,23 +6,21 @@ using Microsoft.VisualStudio.TestPlatform.TestHost;
 
 namespace Tests
 {
-    public class LocationTest: IClassFixture<WebApplicationFactory<Program>>{ 
-    public async Task HelloWorldTest()
+    //: IClassFixture<WebApplicationFactory<Program>>
+    public class LocationTest{
+        [Fact]
+    public async Task test_getAllLocations()
     {
-        var application = new WebApplicationFactory<Program>()
-            .WithWebHostBuilder(builder =>
-            {
-            // ... Configure test services
-            });
-            //
+            var application = new WebApplicationFactory<Program>();
+          
             // Arrange
             var client = application.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/api/Location/u");
+            var response = await client.GetAsync("/api/Location/all");
 
             // Assert
-            response.Equals(false);
+            response.EnsureSuccessStatusCode();
         }
 }
 }
