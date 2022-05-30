@@ -2403,6 +2403,7 @@
           "Microsoft.AspNetCore.Mvc.Testing": "6.0.5",
           "Serilog": "2.11.0",
           "Serilog.AspNetCore": "5.0.0",
+          "Serilog.Sinks.Console": "4.0.1",
           "Services": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
@@ -7900,25 +7901,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\WIN10\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\WIN10\\source\\repos\\boot-camp2\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\Repos\\nessi0527\\MicrosoftBootcamp-newBranch\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\WIN10\\source\\repos\\boot-camp2\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\WIN10\\source\\repos\\boot-camp2\\Tests\\obj\\",
+      "projectPath": "C:\\Users\\user\\source\\Repos\\nessi0527\\MicrosoftBootcamp-newBranch\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\source\\Repos\\nessi0527\\MicrosoftBootcamp-newBranch\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -7931,8 +7935,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\WIN10\\source\\repos\\boot-camp2\\boot-camp2\\boot_camp2.csproj": {
-              "projectPath": "C:\\Users\\WIN10\\source\\repos\\boot-camp2\\boot-camp2\\boot_camp2.csproj"
+            "C:\\Users\\user\\source\\Repos\\nessi0527\\MicrosoftBootcamp-newBranch\\boot-camp2\\boot_camp2.csproj": {
+              "projectPath": "C:\\Users\\user\\source\\Repos\\nessi0527\\MicrosoftBootcamp-newBranch\\boot-camp2\\boot_camp2.csproj"
             }
           }
         }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using Services;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,15 +9,15 @@ namespace boot_camp2.Controllers
     [ApiController]
     public class LocationController : ControllerBase
     {
-
-
-        private readonly ILogger<LocationController> _logger;
-
+        Serilog.Core.Logger log;
         ILocationService _locationService;
-        public LocationController(ILocationService locationService, ILogger<LocationController> logger)
+        public LocationController(ILocationService locationService)
         {
             _locationService = locationService;
-            _logger = logger;
+              log = new LoggerConfiguration()
+                   .WriteTo.File("C:\\Users\\user\\source\\Repos\\nessi0527\\logs\\log.txt")
+                   .CreateLogger();
+            
         }
         // GET: api/<PatientController>
         [HttpGet("all")]
@@ -24,13 +25,14 @@ namespace boot_camp2.Controllers
         {
             try
             {
-                throw new Exception("error");
+                return await _locationService.getLocations();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                _logger.LogInformation(ex.StackTrace);
+                log.Error(ex.StackTrace);
+                return new List<Location>();
             }
-            return await _locationService.getLocations();
+           
         }
 
 
