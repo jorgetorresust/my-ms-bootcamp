@@ -9,15 +9,15 @@ namespace boot_camp2.Controllers
     [ApiController]
     public class LocationController : ControllerBase
     {
-        Serilog.Core.Logger log;
+        private readonly ILogger<LocationController> _logger;
+
         ILocationService _locationService;
-        public LocationController(ILocationService locationService)
+
+        public LocationController(ILogger<LocationController> logger, ILocationService locationService)
         {
             _locationService = locationService;
-            log = new LoggerConfiguration()
-                 .WriteTo.File("C:\\Users\\user\\source\\Repos\\nessi0527\\logs\\log.txt")
-                 .CreateLogger();
-            
+            _logger = logger;
+
         }
         // GET: api/<PatientController>
         [HttpGet("all")]
@@ -25,14 +25,15 @@ namespace boot_camp2.Controllers
         {
             try
             {
-                return await _locationService.getLocations();
+                //int x = 5;
+                throw new Exception("nnnn");
             }
             catch (Exception ex)
             {
-                log.Error(ex.StackTrace);
-                return new List<Location>();
+                _logger.LogError(ex.StackTrace);
             }
-           
+            return await _locationService.getLocations();
+
         }
 
 

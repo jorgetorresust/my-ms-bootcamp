@@ -1,26 +1,20 @@
+using boot_camp2.Middleware;
 using Dal;
 using Serilog;
 using Services;
 
 var builder = WebApplication.CreateBuilder(args);
-//var log = new LoggerConfiguration()
-//    .WriteTo.File("C:\\Users\\user\\source\\Repos\\nessi0527\\logs\\logFile.txt")
-//    .CreateLogger();
-//    log.Information("Hello, Serilog!");
-//    log.Warning("Goodbye, Serilog.");
-//Log.Logger = new LoggerConfiguration()
-//    .MinimumLevel.Debug()
-//    .WriteTo.File("log.txt")
-//    .WriteTo.Console(restrictedToMinimumLevel: LogEventLevel.Information)
-//    .CreateLogger();
-//builder.Host.UseSerilog();
-//var logger = new LoggerConfiguration()
-//  .ReadFrom.Configuration(builder.Configuration)
-//  .Enrich.FromLogContext()
-//  .CreateLogger();
-//builder.Logging.ClearProviders();
-//builder.Logging.AddSerilog(logger);
-builder.Services.AddRazorPages();
+
+//builder.Host.UseSerilog((hostContext, services, configuration) =>
+//{
+//    configuration.WriteTo.File("C:\\Users\\user\\source\\Repos\\nessi0527\\logs\\log.txt");
+//});
+var logger = new LoggerConfiguration()
+  .ReadFrom.Configuration(builder.Configuration)
+  .Enrich.FromLogContext()
+  .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 builder.Services.AddScoped<ILocationService, LocationService>();
 builder.Services.AddScoped<ILocationData, LocationData>();
 
@@ -34,7 +28,7 @@ builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
-
+//app.UseErrorHandler();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -47,7 +41,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapRazorPages();
 
 app.Run();
 public partial class Program { }
