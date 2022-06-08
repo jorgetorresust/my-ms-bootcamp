@@ -14,8 +14,10 @@ namespace DL
         //FileStream fs;
         public LocationDL()
         {
-        //    fs=File.Create("C:\\Users\\me\\Documents\\נסי\\Microsoft-Bootcamp\\locations.JSON");
-        //    fs.Close();   
+          if (!File.Exists("C:\\Users\\user\\source\\Repos\\nessi0527\\repositories\\locations2.JSON")) {
+               var fs= File.CreateText("C:\\Users\\user\\source\\Repos\\nessi0527\\repositories\\locations2.JSON");
+                fs.Close();
+            } 
         }
         public async Task<List<Location>> getLocationsByPatientId(String patientId)
         {
