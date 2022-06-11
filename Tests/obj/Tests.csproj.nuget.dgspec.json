@@ -280,6 +280,9 @@
             "projectReferences": {
               "C:\\Users\\user\\source\\Repos\\nessi0527\\MicrosoftBootcamp-newBranch\\boot-camp2\\boot_camp2.csproj": {
                 "projectPath": "C:\\Users\\user\\source\\Repos\\nessi0527\\MicrosoftBootcamp-newBranch\\boot-camp2\\boot_camp2.csproj"
+              },
+              "C:\\Users\\user\\source\\Repos\\nessi0527\\MicrosoftBootcamp-newBranch\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\user\\source\\Repos\\nessi0527\\MicrosoftBootcamp-newBranch\\Services\\Services.csproj"
               }
             }
           }
@@ -301,6 +304,10 @@
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.1.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.1, )"
             },
             "Serilog": {
               "target": "Package",

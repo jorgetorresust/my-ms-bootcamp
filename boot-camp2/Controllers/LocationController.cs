@@ -13,7 +13,7 @@ namespace boot_camp2.Controllers
 
         ILocationService _locationService;
 
-        public LocationController(ILogger<LocationController> logger, ILocationService locationService)
+        public LocationController( ILocationService locationService, ILogger<LocationController> logger = null)
         {
             _locationService = locationService;
             _logger = logger;
@@ -23,15 +23,16 @@ namespace boot_camp2.Controllers
         [HttpGet("all")]
         public async Task<List<Location>> Get()
         {
-            try
-            {
-                //int x = 5;
-                throw new Exception("nnnn");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.StackTrace);
-            }
+            //try
+            //{
+            //    //int x = 5;
+            //    throw new Exception("nnnn");
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex.StackTrace);
+            //}
+            throw new Exception("jjj");
             return await _locationService.getLocations();
 
         }
